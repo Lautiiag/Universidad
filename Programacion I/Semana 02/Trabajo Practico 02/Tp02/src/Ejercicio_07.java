@@ -28,7 +28,7 @@ public class Ejercicio_07 {
     }
     public static int pedirNota(Scanner sc) {
         System.out.print("Ingrese una nota (0-10): ");
-        return sc.nextInt();
+        return Integer.parseInt(sc.nextLine());
     }
     public static void main(String[] args) {
         validarNota();
