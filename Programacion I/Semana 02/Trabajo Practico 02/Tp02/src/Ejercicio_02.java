@@ -12,14 +12,13 @@ El mayor es: 12
 import java.util.Scanner;
 public class Ejercicio_02 {
     static Scanner sc = new Scanner(System.in);
-    public static int numInput(String message) {
-        System.out.print(message);
+
+    public static int ingresarNumero(String mensaje) {
+        System.out.print(mensaje);
         return Integer.parseInt(sc.nextLine());
     }
-    public static void main(String[] args) {
-        int a = numInput("Ingrese el primer número: ");
-        int b = numInput("Ingrese el segundo número: ");
-        int c = numInput("Ingrese el tercer número: ");
+
+    public static void verificarMayor(int a, int b, int c){
 
         if (a >= b && a >= c) {
             System.out.println("El mayor es " + a + ".");
@@ -28,7 +27,14 @@ public class Ejercicio_02 {
         } else {
             System.out.println("El mayor es " + c + ".");
         }
-        sc.close();
-
     }
+
+    public static void main(String[] args) {
+        int a = ingresarNumero("Ingrese el primer número: ");
+        int b = ingresarNumero("Ingrese el segundo número: ");
+        int c = ingresarNumero("Ingrese el tercer número: ");
+        verificarMayor(a, b, c);
+        sc.close();
+    }
+
 }
