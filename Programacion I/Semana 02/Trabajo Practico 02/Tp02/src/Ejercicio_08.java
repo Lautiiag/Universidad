@@ -16,6 +16,7 @@ El precio final del producto es: 105.0
 
 import java.util.Scanner;
 public class Ejercicio_08 {
+
     public static void procesarCompra() {
         Scanner sc = new Scanner(System.in);
 
@@ -32,20 +33,25 @@ public class Ejercicio_08 {
 
         sc.close();
     }
+
+    public static double pedirDato(Scanner sc, String mensaje) {
+        System.out.print(mensaje);
+        return Double.parseDouble(sc.nextLine());
+    }
+
     public static double calcularPrecioFinal(double precioBase, double impuesto, double descuento) {
         double montoImpuesto = precioBase * (impuesto / 100);
         double montoDescuento = precioBase * (descuento / 100);
 
         return precioBase + montoImpuesto - montoDescuento;
     }
-    public static double pedirDato(Scanner sc, String mensaje) {
-        System.out.print(mensaje);
-        return sc.nextDouble();
-    }
+
     public static void mostrarResultado(double precioFinal) {
         System.out.println("El precio final del producto es: " + precioFinal);
     }
+
     public static void main(String[] args) {
         procesarCompra();
     }
+
 }

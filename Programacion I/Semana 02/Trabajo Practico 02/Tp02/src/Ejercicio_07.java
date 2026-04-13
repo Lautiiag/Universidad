@@ -14,6 +14,7 @@ Nota guardada correctamente.
 
 import java.util.Scanner;
 public class Ejercicio_07 {
+
     public static void validarNota() {
         Scanner sc = new Scanner(System.in);
         int nota;
@@ -26,11 +27,14 @@ public class Ejercicio_07 {
         System.out.println("Nota guardada correctamente.");
         sc.close();
     }
+
     public static int pedirNota(Scanner sc) {
         System.out.print("Ingrese una nota (0-10): ");
         return Integer.parseInt(sc.nextLine());
     }
+
     public static void main(String[] args) {
         validarNota();
     }
+
 }
