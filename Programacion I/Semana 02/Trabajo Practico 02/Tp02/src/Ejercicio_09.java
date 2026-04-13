@@ -20,6 +20,7 @@ El total a pagar es: 60.
 
 import java.util.Scanner;
 public class Ejercicio_09 {
+
     public static void procesarPedido() {
         Scanner sc = new Scanner(System.in);
 
@@ -43,6 +44,7 @@ public class Ejercicio_09 {
 
         sc.close();
     }
+
     public static double calcularCostoEnvio(double peso, String zona) {
         double costoPorKg;
         if (zona.equalsIgnoreCase("Nacional")) {
@@ -55,18 +57,23 @@ public class Ejercicio_09 {
 
         return peso * costoPorKg;
     }
+
     public static double calcularTotalCompra(double precioProducto, double costoEnvio) {
         return precioProducto + costoEnvio;
     }
+
     public static double pedirDouble(Scanner sc, String mensaje) {
         System.out.print(mensaje);
-        return sc.nextDouble();
+        return Double.parseDouble(sc.nextLine());
     }
+
     public static String pedirString(Scanner sc, String mensaje) {
         System.out.print(mensaje);
-        return sc.next();
+        return sc.nextLine();
     }
+
     public static void main(String[] args) {
         procesarPedido();
     }
+
 }

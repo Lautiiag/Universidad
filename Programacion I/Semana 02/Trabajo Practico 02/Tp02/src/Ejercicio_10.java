@@ -16,6 +16,7 @@ El nuevo stock del producto es: 60
  */
 import java.util.Scanner;
 public class Ejercicio_10 {
+
     public static void gestionarInventario() {
         Scanner sc = new Scanner(System.in);
 
@@ -36,17 +37,22 @@ public class Ejercicio_10 {
 
         sc.close();
     }
+
     public static int actualizarStock(int stockActual, int cantidadVendida, int cantidadRecibida) {
         return stockActual - cantidadVendida + cantidadRecibida;
     }
+
     public static int pedirEntero(Scanner sc, String mensaje) {
         System.out.print(mensaje);
-        return sc.nextInt();
+        return Integer.parseInt(sc.nextLine());
     }
+
     public static void mostrarResultado(int nuevoStock) {
         System.out.println("El nuevo stock del producto es: " + nuevoStock);
     }
+
     public static void main(String[] args) {
         gestionarInventario();
     }
+
 }
