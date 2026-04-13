@@ -9,12 +9,10 @@ El año 2024 es bisiesto.
 Ingrese un año: 1900
 El año 1900 no es bisiesto.
 */
-//Importante Aclaración: Quise implementar variables en inglés para darle un poco de versatilidad
-//a mi forma de codificar, espero no sea de molestia.
 import java.util.Scanner;
 public class Ejercicio_01 {
     static Scanner sc = new Scanner(System.in);
-    public static void leapYear(int year){
+    public static void anioBisiesto(int year){
         if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
             System.out.println("El año "+ year + " es bisiesto.");
         } else {
@@ -25,7 +23,7 @@ public class Ejercicio_01 {
     public static void main(String[] args) {
         System.out.print("Ingrese un año: ");
         int year = Integer.parseInt(sc.nextLine());
-        leapYear(year);
+        anioBisiesto(year);
 
     }
 }
