@@ -21,6 +21,7 @@ Ceros: 2
 
 import java.util.Scanner;
 public class Ejercicio_06 {
+
     public static void contarNumeros() {
         Scanner sc = new Scanner(System.in);
         int positivos = 0, negativos = 0, ceros = 0;
@@ -28,7 +29,6 @@ public class Ejercicio_06 {
         for (int i = 1; i <= 10; i++) {
             int numero = pedirNumero(sc, i);
 
-            // Clasificación lógica
             if (numero > 0) positivos++;
             else if (numero < 0) negativos++;
             else ceros++;
@@ -37,14 +37,20 @@ public class Ejercicio_06 {
         mostrarResultados(positivos, negativos, ceros);
         sc.close();
     }
+
     public static int pedirNumero(Scanner sc, int indice) {
         System.out.print("Ingrese el número " + indice + ": ");
-        return sc.nextInt();
+        System.out.print(": ");
+
+        return Integer.parseInt(sc.nextLine());
     }
+
     public static void mostrarResultados(int p, int n, int c) {
         System.out.println("Resultados:\nPositivos: " + p + "\nNegativos: " + n + "\nCeros: " + c);
     }
+
     public static void main(String[] args) {
         contarNumeros();
     }
+
 }
