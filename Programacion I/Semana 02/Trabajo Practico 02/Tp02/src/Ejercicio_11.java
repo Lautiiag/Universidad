@@ -13,7 +13,9 @@ El precio final con descuento es: 180.0
 
 import java.util.Scanner;
 public class Ejercicio_11 {
+
     public static final double DESCUENTO_ESPECIAL = 0.10;
+
     public static void procesarDescuento() {
         Scanner sc = new Scanner(System.in);
 
@@ -27,6 +29,7 @@ public class Ejercicio_11 {
 
         sc.close();
     }
+
     public static void calcularDescuentoEspecial(double precio) {
         double descuentoAplicado = precio * DESCUENTO_ESPECIAL;
         double precioFinal = precio - descuentoAplicado;
@@ -34,11 +37,14 @@ public class Ejercicio_11 {
         System.out.println("El descuento especial aplicado es: " + descuentoAplicado);
         System.out.println("El precio final con descuento es: " + precioFinal);
     }
+
     public static double pedirPrecio(Scanner sc) {
         System.out.print("Ingrese el precio del producto: ");
-        return sc.nextDouble();
+        return Double.parseDouble(sc.nextLine());
     }
+
     public static void main(String[] args) {
         procesarDescuento();
     }
+
 }

@@ -26,6 +26,7 @@ Conceptos Clave Aplicados:
  */
 
 public class Ejercicio_12 {
+
     public static void gestionarPrecios() {
         double[] precios = {199.99, 299.5, 149.75, 399.0, 89.99};
 
@@ -37,11 +38,13 @@ public class Ejercicio_12 {
         System.out.println("\nPrecios modificados:");
         mostrarPrecios(precios);
     }
+
     public static void mostrarPrecios(double[] listaPrecios) {
         for (double precio : listaPrecios) {
             System.out.println("Precio: $" + precio);
         }
     }
+
     public static void modificarPrecio(double[] listaPrecios, int indice, double nuevoPrecio) {
         if (indice >= 0 && indice < listaPrecios.length) {
             listaPrecios[indice] = nuevoPrecio;
@@ -49,7 +52,9 @@ public class Ejercicio_12 {
             System.out.println("Error: Índice fuera de rango.");
         }
     }
+
     public static void main(String[] args) {
         gestionarPrecios();
     }
+
 }

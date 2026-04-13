@@ -39,6 +39,7 @@ public class Ejercicio_13 {
         System.out.println("\nPrecios modificados:");
         mostrarPreciosRecursivo(precios, 0);
     }
+
     public static void mostrarPreciosRecursivo(double[] listaPrecios, int indice) {
         if (indice == listaPrecios.length) {
             return;
@@ -48,6 +49,7 @@ public class Ejercicio_13 {
 
         mostrarPreciosRecursivo(listaPrecios, indice + 1);
     }
+
     public static void main(String[] args) {
         gestionarPreciosRecursivos();
     }
