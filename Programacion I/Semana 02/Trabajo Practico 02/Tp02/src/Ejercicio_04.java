@@ -18,48 +18,53 @@ Precio final: 850.0
 import java.util.Scanner;
 public class Ejercicio_04 {
     static Scanner sc = new Scanner(System.in);
-    public static double inputPrice() {
+
+    public static double ingresarPrecio() {
         System.out.print("Ingrese el precio del producto: ");
         return Double.parseDouble(sc.nextLine());
     }
-    public static char inputCategory(){
+
+    public static char ingresarCategoria(){
         System.out.print("Ingrese la categoría del producto (A, B o C): ");
         String input = sc.nextLine();
         return input.toUpperCase().charAt(0);
     }
-    public static double applyDiscount(char category, double originalPrice) {
-        switch (category) {
+
+    static final double DESC_A = 0.90;
+    static final double DESC_B = 0.85;
+    static final double DESC_C = 0.80;
+
+    public static double aplicarDescuento(char categoria, double precioOriginal) {
+        switch (categoria) {
             case 'A':
-                originalPrice = originalPrice * DESC_A;
+                precioOriginal = precioOriginal * DESC_A;
                 break;
             case 'B':
-                originalPrice = originalPrice * DESC_B;
+                precioOriginal = precioOriginal * DESC_B;
                 break;
             case 'C':
-                originalPrice = originalPrice * DESC_C;
+                precioOriginal = precioOriginal * DESC_C;
                 break;
             default:
                 System.out.println("No se realizó ningún descuento.");
                 break;
         }
-        return originalPrice;
+        return precioOriginal;
     }
-    static final double DESC_A = 0.90;
-    static final double DESC_B = 0.85;
-    static final double DESC_C = 0.80;
-    public static double percent(double originalPrice, double finalPrice){
-        double discountAmount = originalPrice - finalPrice;
-        return (discountAmount * 100.0) / originalPrice;
+
+    public static double porcentaje(double precioOriginal, double precioFinal){
+        double cantidadDescuento = precioOriginal - precioFinal;
+        return (cantidadDescuento * 100.0) / precioOriginal;
     }
 
     public static void main(String[] args) {
-        double originalPrice = inputPrice();
-        char category = inputCategory();
-        double finalPrice = applyDiscount(category, originalPrice);
-        double percentApplied = percent(originalPrice, finalPrice);
-        System.out.println("Precio original: " + originalPrice + " pesos.");
-        System.out.println("Descuento realizado: " + (int)percentApplied + "%.");
-        System.out.println("Precio final: " + finalPrice + " pesos.");
+        double precioOriginal = ingresarPrecio();
+        char categoria = ingresarCategoria();
+        double precioFinal = aplicarDescuento(categoria, precioOriginal);
+        double porcentajeAplicado = porcentaje(precioOriginal, precioFinal);
+        System.out.println("Precio original: " + precioOriginal + " pesos.");
+        System.out.println("Descuento realizado: " + (int)porcentajeAplicado + "%.");
+        System.out.println("Precio final: " + precioFinal + " pesos.");
     sc.close();
     }
 }

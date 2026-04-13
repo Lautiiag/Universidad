@@ -10,15 +10,17 @@ Ingrese un número (0 para terminar): 2
 Ingrese un número (0 para terminar): 0
 La suma de los números pares es: 6
  */
-//Importante Aclaración: A partir de este ejercicio las variables están en
-//español porque empecé a apurar el paso.
 import java.util.Scanner;
 public class Ejercicio_05 {
-    public static void sumaPares(int numero, int sumaPares){
+
+    public static void sumaPares(){
         Scanner sc = new Scanner(System.in);
+        int sumaPares = 0;
+        int numero = -1; //Se inica en número impar y negativo para asegurar que se entre al ciclo while y no se sume.
+
         while (numero != 0) {
             System.out.print("Ingrese un número (0 para terminar): ");
-            numero = sc.nextInt();
+            numero = Integer.parseInt(sc.nextLine());
 
             if (numero % 2 == 0 && numero != 0) {
                 sumaPares += numero;
@@ -27,9 +29,8 @@ public class Ejercicio_05 {
         }
         sc.close();
     }
+
     public static void main(String[] args) {
-        int sumaPares = 0;
-        int numero = -1;
-        sumaPares(numero, sumaPares);
+        sumaPares();
     }
 }

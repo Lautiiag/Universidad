@@ -16,12 +16,14 @@ Eres un Niño.
 import java.util.Scanner;
 public class Ejercicio_03 {
     static Scanner  sc = new Scanner(System.in);
-    public static int ageInput(){
+
+    public static int ingresarEdad(){
         System.out.print("Ingrese su edad: ");
         return Integer.parseInt(sc.nextLine());
     }
-    public static void main(String[] args) {
-        int age = ageInput();
+
+    public static void verificarEdad(){
+        int age = ingresarEdad();
         if (age < 12) {
             System.out.println("Usted es niño/a.");
         } else if (age <= 17) {
@@ -31,6 +33,10 @@ public class Ejercicio_03 {
         } else {
             System.out.println("Usted es adulto/a mayor.");
         }
+    }
+
+    public static void main(String[] args) {
+        verificarEdad();
         sc.close();
     }
 }
