@@ -12,18 +12,19 @@ El año 1900 no es bisiesto.
 import java.util.Scanner;
 public class Ejercicio_01 {
     static Scanner sc = new Scanner(System.in);
-    public static void anioBisiesto(int year){
-        if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
-            System.out.println("El año "+ year + " es bisiesto.");
+    public static void Bisiesto(int anio){
+        if (((anio % 4 == 0) && (anio % 100 != 0)) || (anio % 400 == 0)) {
+            System.out.println("El año "+ anio + " es bisiesto.");
         } else {
-            System.out.println("El año "+ year + " no es bisiesto.");
+            System.out.println("El año "+ anio + " no es bisiesto.");
         }
         sc.close();
     }
-    public static void main(String[] args) {
+    public static int ingresarAnio() {
         System.out.print("Ingrese un año: ");
-        int year = Integer.parseInt(sc.nextLine());
-        anioBisiesto(year);
-
+        return Integer.parseInt(sc.nextLine());
+    }
+    public static void main(String[] args) {
+        Bisiesto(ingresarAnio());
     }
 }
